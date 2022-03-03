@@ -14,19 +14,20 @@ typedef struct Graph {
 	unordered_map* p_nodes;
 } Graph;
 
-void initGraphVertex(GraphVertex* p_graph_vertex);
+void initGraphVertex(GraphVertex* p_graph_vertex, size_t id);
 void freeGraphVertex(GraphVertex* p_graph_vertex);
 
 void initGraph(Graph* p_graph);
 void freeGraph(Graph* p_graph);
 
-void addVertex		(Graph* p_graph, GraphVertex* p_vertex);
-void removeVertex	(Graph* p_graph, GraphVertex* p_vertex);
-int hasVertex		(Graph* p_graph, GraphVertex* p_vertex);
+GraphVertex* addVertex (Graph* p_graph, size_t id);
+void removeVertex	   (Graph* p_graph, size_t id);
+int hasVertex		   (Graph* p_graph, size_t id);
+GraphVertex* getVertex (Graph* p_graph, size_t id);
 
 void addEdge(Graph* p_graph,
-			 GraphVertex* p_tail_vertex, 
-			 GraphVertex* p_head_vertex,
+			 size_t head_id,
+			 size_t tail_id,
 			 double weight);
 
 void removeEdge(GraphVertex* p_tail_vertex, 
