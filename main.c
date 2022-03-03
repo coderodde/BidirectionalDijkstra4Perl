@@ -23,13 +23,14 @@ Graph* buildGraph() {
     for (size_t id = 0; id < NODES; ++id) 
     {
         addVertex(p_graph, id);
-    }
+    }  
 
     for (size_t edge = 0; edge < EDGES; ++edge) 
     {
         id1 = rand() % NODES;
         id2 = rand() % NODES;
         weight = randfrom(0.0, 10.0);
+        printf("%d\n", edge);
         addEdge(p_graph, id1, id2, weight);
     }
 
